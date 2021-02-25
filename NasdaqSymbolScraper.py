@@ -7,9 +7,11 @@ def ScrapeSymbols():
   print("Scraping all symbols from Nasdaq OMX C25...")
   url = 'http://www.nasdaqomxnordic.com/shares/listed-companies/copenhagen'
 
-  headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36',}
-  results = requests.get(url, headers=headers)
-
+  headers = {'User-Agent': 'Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)',}
+  try:
+    results = requests.get(url, headers=headers, timeout=10)
+  except Exception as e:
+    print(e)
   symbols = []
 
   soup = BeautifulSoup(results.text, "html.parser")
