@@ -1,2 +1,2 @@
 # C25IndexDataCreater
-Will download all symbols in OMX C25 index and download historical close prices generated in a csv file
+Will scrape all symbols in OMX C25 (copenhagen) from www.nasdaqomxnordic.com index and download historical close prices from Yahoo finances then generating a history csv file, for use with PyPortfolioOpt
